@@ -130,11 +130,10 @@ void reverse(Stack<T> &s) {
 
 template<class T>
 Stack<T> operator+(Stack<T> &s, T val) {
-    reverse(s);
     Stack<T> temp = s;
+    reverse(temp);
     temp.push(val);
     reverse(temp);
-    reverse(s);
     return temp;
 }
 
