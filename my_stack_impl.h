@@ -139,16 +139,15 @@ Stack<T> operator+(Stack<T> &s, T val) {
 
 template<class T>
 Stack<T> operator+(Stack<T> &first, Stack<T> &second) {
-    reverse(first);
-    Stack<T> temp1 = first;
-    Stack<T> temp2 = second;
-    while (!temp2.isEmpty()) {
-        temp1.push(temp2.top());
-        temp2.pop();
+    Stack<T> ret = first;
+    reverse(ret);
+    Stack<T> temp = second;
+    while (!temp.isEmpty()) {
+        ret.push(temp.top());
+        temp.pop();
     }
-    reverse(first);
-    reverse(temp1);
-    return temp1;
+    reverse(ret);
+    return ret;
 }
 
 #endif //MY_STACK_IMPL_H
